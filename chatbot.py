@@ -5,6 +5,10 @@ from dotenv import load_dotenv
 load_dotenv()
 
 API_KEY = os.getenv("API_KEY")
+if not API_KEY:
+    print("Error: API_KEY is not configured.")
+    print("Please add your API key to the .env file.")
+    exit()
 URL = "https://api.kie.ai/codex/v1/responses"
 
 conversation = []
